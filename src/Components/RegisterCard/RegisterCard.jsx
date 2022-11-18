@@ -55,7 +55,7 @@ const RegisterCard = () => {
                 <img className="logoDesign" src={logo} alt={logo}/>
             </div>
             <div className="registerCardMiddle">
-                {/* Here were are going to operate with inputs... */}
+                {/* Here were are going to operate with inputs... */}                                            
                 <input placeholder="E-mail" type="email" name="email" className={userError.emailError === "" ? "basicInput" : "basicInput errorInput"} onChange={(e)=>inputHandler(e)} onBlur={(e)=>errorHandler(e)}/>
                 <div className='errorMsg'>{userError.emailError}</div>
                 

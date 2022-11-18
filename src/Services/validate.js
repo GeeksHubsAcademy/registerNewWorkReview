@@ -1,8 +1,8 @@
 
 
-export const errorCheck = (type,value) => {
+export const errorCheck = (name,value) => {
     
-    switch(type){
+    switch(name){
 
         case "email":
 
