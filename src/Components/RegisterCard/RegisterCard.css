@@ -49,3 +49,28 @@
     color: red;
 
 }
+
+.registerButton {
+
+    height: 2em;
+    width: 6em;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    color: white;
+    background-color: red;
+
+    border-radius: 1%;
+
+    transition: 0.2s
+
+}
+
+.registerButton:hover {
+
+    transition: 0.2s;
+    background-color: darkred;
+}

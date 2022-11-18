@@ -1,6 +1,7 @@
 
 import React, {useState} from 'react';
 import { errorCheck } from '../../Services/validate';
+import { registerUser } from '../../Services/apiCalls';
 import './RegisterCard.css'
 import logo from '../../Assets/logo.jpg';
 
@@ -47,6 +48,17 @@ const RegisterCard = () => {
 
     }
 
+    const registerMe = () => {
+
+        //Here first...we CHECK if there are NO errors.
+
+        
+
+        /////////////////////////////////////////////
+        //If there are no errors, we trigger the function which calls the API
+        //registerUser(user)
+    }
+
 
     return (
         <div className="registerCardDesign">
@@ -69,7 +81,9 @@ const RegisterCard = () => {
                 <div className='errorMsg'>{userError.password2Error}</div>
             
             </div>
-            <div className="registerCardBottom"></div>
+            <div className="registerCardBottom">
+                <div onClick={()=>registerMe()} className="registerButton">Register</div>
+            </div>
         </div>
     )
 }
