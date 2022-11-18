@@ -13,23 +13,60 @@ const RegisterCard = () => {
         password2: ''
     });
 
+    const [userError, setUserError] = useState({
+        emailError : '',
+        phoneError : '',
+        passwordError : '',
+        password2Error : ''
+    })
+
     const inputHandler = (e) => {
         //Now I bind the handler
 
+        setUser((prevState)=>({...prevState, 
+            [e.target.name] : e.target.value
+        }));
+
+    }
+
+    const errorHandler = (e) => {
+
+        let error = "";
+
+        error = errorCheck(e.target.name,e.target.value);
+
+        if(e.target.name === "password2"){
+            if(user.password !== user.password2){
+                error = "Write the same password twice"
+            }
+        }
+
+        setUserError((prevState)=>({...prevState, 
+            [e.target.name + 'Error'] : error
+        }));
 
     }
 
     return (
         <div className="registerCardDesign">
+            {/* <pre>{JSON.stringify(user, null, 2)}</pre> */}
             <div className="registerCardUp">
                 <img className="logoDesign" src={logo}/>
             </div>
             <div className="registerCardMiddle">
                 {/* Here were are going to operate with inputs... */}
-                <input type="" name="" className="" onChange={(e)=>inputHandler(e)} onBlur={(e)=>errorCheck(e.target.value)}/>
-                <input type="" name="" className="" onChange={(e)=>inputHandler(e)} onBlur={(e)=>errorCheck(e.target.value)}/>
-                <input type="" name="" className="" onChange={(e)=>inputHandler(e)} onBlur={(e)=>errorCheck(e.target.value)}/>
-                <input type="" name="" className="" onChange={(e)=>inputHandler(e)} onBlur={(e)=>errorCheck(e.target.value)}/>
+                <input placeholder="E-mail" type="email" name="email" className="basicInput" onChange={(e)=>inputHandler(e)} onBlur={(e)=>errorHandler(e)}/>
+                <div className='errorMsg'>{userError.emailError}</div>
+                
+                <input placeholder="Phone number" type="text" name="phone" className="basicInput" onChange={(e)=>inputHandler(e)} onBlur={(e)=>errorHandler(e)}/>
+                <div className='errorMsg'>{userError.phoneError}</div>
+                
+                <input placeholder="Password" type="password" name="password" className="basicInput" onChange={(e)=>inputHandler(e)} onBlur={(e)=>errorHandler(e)}/>
+                <div className='errorMsg'>{userError.passwordError}</div>
+                
+                <input placeholder="Repeat password" type="password" name="password2" className="basicInput" onChange={(e)=>inputHandler(e)} onBlur={(e)=>errorHandler(e)}/>
+                <div className='errorMsg'>{userError.password2Error}</div>
+            
             </div>
             <div className="registerCardBottom"></div>
         </div>

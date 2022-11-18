@@ -23,5 +23,29 @@
 .logoDesign {
 
     height: 5em;
+}
+
+.basicInput {
+
+    margin: 1em;
+
+    height: 3em;
+    width: 18em;
+
+    border-radius: 5%;
+
+    border: 0.2em solid darkcyan;
+
+}
+
+.errorInput {
+
+    border: 0.2em solid red;
+
+}
+
+.errorMsg {
+
+    color: red;
 
 }
