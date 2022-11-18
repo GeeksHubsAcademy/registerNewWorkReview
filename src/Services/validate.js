@@ -8,16 +8,16 @@ export const errorCheck = (type,value) => {
 
             if (! /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$/.test(value) ) {
                 return "Invalid e-mail format";
+            } else {
+                return "";
             }
-
-        break;
 
         case "phone":
             if (! /(?=.*?[0-9])/.test(value) ) {
                 return "Incorrect phone number";
-            } 
-
-        break;
+            } else {
+                return "";
+            }
 
         case "password":
         case "password2":
@@ -30,9 +30,12 @@ export const errorCheck = (type,value) => {
 
                 if (! /[\d()+-]/g.test(value) ) {
                     return "Invalid password format";
-                } 
+                } else {
+                    return "";
+                }
             }
 
-        break;
+        default: 
+            console.log("I don't know what to say....")
     }
 };

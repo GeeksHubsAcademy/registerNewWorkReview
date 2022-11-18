@@ -47,24 +47,25 @@ const RegisterCard = () => {
 
     }
 
+
     return (
         <div className="registerCardDesign">
             {/* <pre>{JSON.stringify(user, null, 2)}</pre> */}
             <div className="registerCardUp">
-                <img className="logoDesign" src={logo}/>
+                <img className="logoDesign" src={logo} alt={logo}/>
             </div>
             <div className="registerCardMiddle">
                 {/* Here were are going to operate with inputs... */}
-                <input placeholder="E-mail" type="email" name="email" className="basicInput" onChange={(e)=>inputHandler(e)} onBlur={(e)=>errorHandler(e)}/>
+                <input placeholder="E-mail" type="email" name="email" className={userError.emailError === "" ? "basicInput" : "basicInput errorInput"} onChange={(e)=>inputHandler(e)} onBlur={(e)=>errorHandler(e)}/>
                 <div className='errorMsg'>{userError.emailError}</div>
                 
-                <input placeholder="Phone number" type="text" name="phone" className="basicInput" onChange={(e)=>inputHandler(e)} onBlur={(e)=>errorHandler(e)}/>
+                <input placeholder="Phone number" type="text" name="phone" className={userError.phoneError === "" ? "basicInput" : "basicInput errorInput"} onChange={(e)=>inputHandler(e)} onBlur={(e)=>errorHandler(e)}/>
                 <div className='errorMsg'>{userError.phoneError}</div>
                 
-                <input placeholder="Password" type="password" name="password" className="basicInput" onChange={(e)=>inputHandler(e)} onBlur={(e)=>errorHandler(e)}/>
+                <input placeholder="Password" type="password" name="password" className={userError.passwordError === "" ? "basicInput" : "basicInput errorInput"} onChange={(e)=>inputHandler(e)} onBlur={(e)=>errorHandler(e)}/>
                 <div className='errorMsg'>{userError.passwordError}</div>
                 
-                <input placeholder="Repeat password" type="password" name="password2" className="basicInput" onChange={(e)=>inputHandler(e)} onBlur={(e)=>errorHandler(e)}/>
+                <input placeholder="Repeat password" type="password" name="password2" className={userError.password2Error === "" ? "basicInput" : "basicInput errorInput"} onChange={(e)=>inputHandler(e)} onBlur={(e)=>errorHandler(e)}/>
                 <div className='errorMsg'>{userError.password2Error}</div>
             
             </div>
