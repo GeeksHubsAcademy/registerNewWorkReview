@@ -11,8 +11,8 @@ const Home = () => {
 
     return(
         <div className='homeDesign'>
-            <div className='linkDesign' onClick={()=>setTimeout(()=>{navigate('/login')},300)}>Login</div>
-            <div className='linkDesign' onClick={()=>setTimeout(()=>{navigate('/register')},300)}>Register</div>
+            <div className='linkDesign' onClick={()=>setTimeout(()=>{navigate('/login')},333)}>Login</div>
+            <div className='linkDesign' onClick={()=>setTimeout(()=>{navigate('/register')},333)}>Register</div>
         </div>
     )
 }
